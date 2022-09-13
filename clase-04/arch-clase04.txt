@@ -1,0 +1,26 @@
+[
+    {
+        "title": "blue",
+        "price": 284,
+        "thumbnail": "https://economipedia.com/wp-content/uploads/dolar-1.jpg",
+        "id": 1
+    },
+    {
+        "title": "bolsa",
+        "price": 271,
+        "thumbnail": "https://economipedia.com/wp-content/uploads/dolar-1.jpg",
+        "id": 2
+    },
+    {
+        "title": "oficial",
+        "price": 147.63,
+        "thumbnail": "https://economipedia.com/wp-content/uploads/dolar-1.jpg",
+        "id": 4
+    },
+    {
+        "title": "cripto",
+        "price": 340,
+        "thumbnail": "https://economipedia.com/wp-content/uploads/dolar-1.jpg",
+        "id": 5
+    }
+]

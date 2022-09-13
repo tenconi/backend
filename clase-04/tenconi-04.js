@@ -42,43 +42,15 @@ class Container {
         console.log(readAgain);
     }
 
-    async deleteById(id){
-        const readAgain = await this.#readDoc();
-        const stringifyRead = JSON.stringify(readAgain);
+    async deleteById(id){             
+        try{
+           const readAgain = await this.#readDoc();
+            const erase = readAgain.filter(x=> x.id !== id);// ID
+            await fs.promises.writeFile(this.route, JSON.stringify(erase, null, 4), 'utf-8')
 
-        const erase = readAgain.find(x=> x.id === id);// ID
-        const wich = readAgain.indexOf(erase);//POSICION
-        const cut = readAgain.splice(wich, 1);// devuelve id en posicion "wich"
-
-        const compare=()=>{
-            readAgain.pop(cut);
-            return JSON.stringify(readAgain)
-        }
-        compare()
-
-        
-        
-    //    console.log(erase.id)
-        // console.log(JSON.stringify(readAgain[erase]))
-        console.log(compare())
-
-
-
-
-     /*  const compare=()=>{
-        if(erase === readAgain.id){
-           
-        }else{
-            console.log(error)
-        }
-      }
-      compare(); */
-
-        
-
-        /* if(wich === true){
-            await fs.promises.writeFile(this.route,[...obj, cut],'utf-8')
-        }  */             
+        }catch(error){
+            console.alert(error);
+        }     
 
     }
 
@@ -101,6 +73,6 @@ const content = new Container('./arch-clase04.txt');
 
 //content.getById(1)
 
-// content.deleteById(3)
+// content.deleteById(3) 
 
 // content.deleteAll()
